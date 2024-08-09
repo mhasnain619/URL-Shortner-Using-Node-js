@@ -1,5 +1,6 @@
 const express = require("express")
 const { connectToMongoDB } = require('./connect')
+const URL = require('./models/url')
 
 const urlRoute = require('./routes/url')
 
@@ -15,6 +16,14 @@ connectToMongoDB('mongodb://localhost:27017/short-url')
 
 app.use(express.json())
 app.use('/url', urlRoute)
+
+app.get('/:shortId', (req, res) => {
+
+    const shortId = req.params.shortId;
+
+    await URL.findOne()
+
+})
 
 app.listen(PORT, () => {
     console.log("Server Started at PORT : " + PORT);
