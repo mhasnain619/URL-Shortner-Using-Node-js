@@ -16,6 +16,7 @@ async function handleGenerateNewShortURL(req, res) {
 }
 
 async function handleGetAnalytics(req, res) {
+    debugger
     try {
         const shortId = req.params.shortId;
 
