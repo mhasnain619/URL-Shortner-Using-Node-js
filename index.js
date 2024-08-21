@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/url', urlRoute);
 app.use('/', staticRoutes); // Corrected this line
 
-app.get('/:shortId', async (req, res) => {
+app.get('/url/:shortId', async (req, res) => {
     const shortId = req.params.shortId;
 
     try {
